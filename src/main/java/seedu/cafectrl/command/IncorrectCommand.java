@@ -14,7 +14,7 @@ public class IncorrectCommand extends Command{
     }
 
     @Override
-    public void execute(Menu menu, Ui ui) {
-        ui.showToUser(feedbackToUser);
+    public void execute(Menu menu) {
+        Ui.showToUser(feedbackToUser);
     }
 }

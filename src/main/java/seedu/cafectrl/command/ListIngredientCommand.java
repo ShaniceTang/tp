@@ -20,10 +20,10 @@ public class ListIngredientCommand extends Command {
     }
 
     @Override
-    public void execute(Menu menu, Ui ui) {
+    public void execute(Menu menu) {
         try {
             Dish selectedDish = menu.getMenuItemsList().get(index - Ui.OFFSET_LIST_INDEX);
-            ui.printIngredients(selectedDish);
+            Ui.printIngredients(selectedDish);
         } catch (IndexOutOfBoundsException e) {
             throw new IllegalArgumentException(Messages.INVALID_DISH_INDEX);
         }

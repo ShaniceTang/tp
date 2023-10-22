@@ -18,7 +18,7 @@ public class Ui {
         scanner = new Scanner(System.in);
     }
 
-    public void printLine() {
+    public static void printLine() {
         showToUser(LINE_STRING);
     }
 
@@ -27,11 +27,11 @@ public class Ui {
         return scanner.nextLine();
     }
 
-    public void showWelcome() {
+    public static void showWelcome() {
         showToUser(UserOutput.WELCOME_MESSAGE.message);
     }
 
-    public void showGoodbye() {
+    public static void showGoodbye() {
         showToUser(UserOutput.GOODBYE_MESSAGE.message);
     }
 
@@ -41,7 +41,7 @@ public class Ui {
      *
      * @param selectedDish Dish for ingredients to be listed out.
      */
-    public void printIngredients(Dish selectedDish) {
+    public static void printIngredients(Dish selectedDish) {
         String ingredientsString = selectedDish.getName() + " Ingredients: \n";
 
         for (Ingredient ingredient : selectedDish.getIngredients()) {
@@ -51,7 +51,7 @@ public class Ui {
         showToUser(ingredientsString.trim());
     }
 
-    public void printAddDishMessage(Dish dish) {
+    public static void printAddDishMessage(Dish dish) {
         String dishNameString = "Dish Name: " + dish.getName();
         DecimalFormat dollarValue = new DecimalFormat("0.00");
         float dishPrice = dish.getPrice();
@@ -79,7 +79,7 @@ public class Ui {
      *
      * @param selectedDish Dish to be deleted
      */
-    public void showDeleteMessage(Dish selectedDish) {
+    public static void printDeleteMessage(Dish selectedDish) {
         showToUser("Okay! " + selectedDish.getName() + " is deleted! :)");
     }
 
@@ -88,7 +88,7 @@ public class Ui {
      * Shows messages(s) to the user
      * @param message string(s) of messages to print
      */
-    public void showToUser(String... message) {
+    public static void showToUser(String... message) {
         for (String m: message) {
             System.out.println(m);
         }
@@ -98,7 +98,7 @@ public class Ui {
      * show edit price message to user
      * @param menuItem menuItem that has been modified
      */
-    public void showEditPriceMessage(String menuItem) {
-        this.showToUser(Messages.PRICE_MODIFIED_MESSAGE, menuItem);
+    public static void showEditPriceMessage(String menuItem) {
+        showToUser(Messages.PRICE_MODIFIED_MESSAGE, menuItem);
     }
 }

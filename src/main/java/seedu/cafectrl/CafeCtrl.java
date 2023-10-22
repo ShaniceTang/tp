@@ -23,7 +23,7 @@ public class CafeCtrl {
     }
 
     private void setup() {
-        ui.showWelcome();
+        Ui.showWelcome();
     }
     
     /**
@@ -33,16 +33,16 @@ public class CafeCtrl {
      * until the user enters a "bye" command, terminating the application.</p>
      */
     private void run() {
-        ui.printLine();
+        Ui.printLine();
         do {
             try {
                 String fullUserInput = ui.receiveUserInput();
                 command = Parser.parseCommand(menu, fullUserInput);
                 command.execute(menu, ui);
             } catch (Exception e) {
-                ui.showToUser(e.getMessage());
+                Ui.showToUser(e.getMessage());
             } finally {
-                ui.printLine();
+                Ui.printLine();
             }
         } while (!command.isExit());
     }

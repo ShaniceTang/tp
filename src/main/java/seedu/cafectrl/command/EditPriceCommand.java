@@ -20,12 +20,11 @@ public class EditPriceCommand extends Command {
     /**
      * Set new price of the dish and show edit price message
      * @param menu menu of the current session
-     * @param ui ui of the current session
      */
-    public void execute(Menu menu, Ui ui) {
+    public void execute(Menu menu) {
         Dish dish = menu.getDish(this.menuID - Ui.OFFSET_LIST_INDEX);
         dish.setPrice(this.newPrice);
 
-        ui.showEditPriceMessage(dish.toString());
+        Ui.showEditPriceMessage(dish.toString());
     }
 }

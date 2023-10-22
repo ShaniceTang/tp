@@ -26,7 +26,7 @@ public class Command {
     /**
      * Executes the command and returns the result.
      */
-    public void execute(Menu menu, Ui ui) {
+    public void execute(Menu menu) {
         throw new UnsupportedOperationException("This method is to be implemented by child classes");
     };
 }

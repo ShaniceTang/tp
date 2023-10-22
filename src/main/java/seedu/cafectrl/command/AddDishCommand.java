@@ -20,8 +20,8 @@ public class AddDishCommand extends Command {
         this.dish = dish;
     }
     @Override
-    public void execute(Menu menu, Ui ui) {
+    public void execute(Menu menu) {
         menu.addDish(dish);
-        ui.printAddDishMessage(dish);
+        Ui.printAddDishMessage(dish);
     }
 }

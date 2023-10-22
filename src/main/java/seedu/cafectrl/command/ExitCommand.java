@@ -18,8 +18,8 @@ public class ExitCommand extends Command {
     }
 
     @Override
-    public void execute(Menu menu, Ui ui) {
-        ui.printLine();
-        ui.showGoodbye();
+    public void execute(Menu menu) {
+        Ui.printLine();
+        Ui.showGoodbye();
     }
 }
